@@ -1,0 +1,15 @@
+.main {
+  flex-grow: 1;
+
+  &__page-title {
+    margin: 15px 0 23px;
+
+    border-bottom: 2px solid #9564aa;
+
+    h1.page-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000;
+    }
+  }
+}
