@@ -5,6 +5,99 @@
 
   &__main-block {
     display: none;
+
+    @include media("mobile-lg") {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      min-height: 100px;
+      padding: 10px 0;
+    }
+
+    &__logo {
+      font-size: 40px;
+      font-weight: 700;
+      color: #fff;
+
+      @include media("tablet") {
+        font-size: 44px;
+      }
+
+      @include media("desktop") {
+        font-size: 48px;
+      }
+    }
+
+    &__site-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      @include media("tablet") {
+        gap: 35px;
+      }
+
+      @include media("desktop") {
+        gap: 40px;
+      }
+
+      &__item {
+        &__link {
+          font-size: 16px;
+          font-weight: 700;
+          color: #fff;
+        }
+
+        &:hover {
+          & > a {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &__item.premium {
+        position: relative;
+
+        padding: 5px 13px;
+        padding-right: 40px;
+
+        border-radius: 10px;
+        background: #684677;
+
+        &::after {
+          content: "";
+
+          position: absolute;
+          top: 50%;
+          right: 13px;
+          z-index: 1;
+
+          width: 18px;
+          height: 15px;
+
+          background-image: url("../img/logo-mobile-header.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          transform: translateY(-50%);
+        }
+
+        a {
+          color: #ffcf2d;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+
+          & > a {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 
   &__mobile-block {
@@ -14,6 +107,11 @@
     gap: 20px;
 
     min-height: 50px;
+    padding: 10px 0;
+
+    @include media("mobile-lg") {
+      display: none;
+    }
 
     &__menu {
       position: relative;

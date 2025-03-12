@@ -1,15 +1,63 @@
 .main {
   flex-grow: 1;
 
+  display: flex;
+
+  background: #fff;
+
+  & > div.container {
+    @include media("tablet") {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  }
+
   &__page-title {
     margin: 15px 0 23px;
 
     border-bottom: 2px solid #9564aa;
 
+    @include media("mobile-sm-max") {
+      margin: 20px 0;
+    }
+
+    @include media("mobile-lg") {
+      margin: 20px 0 25px;
+    }
+
+    @include media("tablet") {
+      margin: 20px 0 30px;
+
+      text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    @include media("desktop") {
+      font-size: 40px;
+    }
+
     h1.page-title {
       font-size: 20px;
       font-weight: 700;
       color: #000;
+
+      @include media("mobile-sm-max") {
+        font-size: 24px;
+      }
+
+      @include media("mobile-lg") {
+        font-size: 28px;
+      }
+
+      @include media("tablet") {
+        font-size: 34px;
+
+        text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+      }
+
+      @include media("desktop") {
+        font-size: 40px;
+      }
     }
   }
 }

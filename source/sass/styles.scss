@@ -1,5 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
+$breakpoints: (
+  desktop-max: 1360px,
+  desktop: 1200px,
+  tablet-max: 1199px,
+  tablet: 992px,
+  mobile-lg-max: 991px,
+  mobile-lg: 768px,
+  mobile-max: 767px,
+  mobile-md: 601px,
+  mobile-sm-max: 600px,
+);
+
+@mixin media($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -42,13 +62,32 @@ body {
 }
 
 .container {
-  max-width: 1200px;
   min-width: 320px;
 
   margin: 0 auto;
   padding: 0 20px;
+
+  @include media("mobile-md") {
+    max-width: 601px;
+  }
+
+  @include media("mobile-lg") {
+    max-width: 768px;
+  }
+
+  @include media("tablet") {
+    max-width: 992px;
+  }
+
+  @include media("desktop") {
+    max-width: 1200px;
+    padding: 0 15px;
+  }
 }
 
 @import "blocks/header.scss";
 @import "blocks/main.scss";
 @import "blocks/catalog.scss";
+@import "blocks/possibilities.scss";
+@import "blocks/sidebar.scss";
+@import "blocks/footer.scss";

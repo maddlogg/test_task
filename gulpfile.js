@@ -114,7 +114,7 @@ gulp.task("scripts", function () {
 
 gulp.task("copy", function () {
   return gulp
-    .src(["source/img/**", "source/js/**/*.min.js"], {
+    .src(["source/img/**", "source/js/**/*.min.js", "source/sprite.svg"], {
       base: "source",
       buffer: true,
       removeBOM: false,

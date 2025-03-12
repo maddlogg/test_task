@@ -4,12 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <title>Buy credits</title>
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <div class="header__main-block"></div>
+        <div class="header__main-block">
+          <div class="header__main-block__logo-wrapper">
+            <a class="header__main-block__logo" href="index.html"> Logo </a>
+          </div>
+          <ul class="header__main-block__site-list">
+            <li class="header__main-block__site-list__item">
+              <a href="#" class="header__main-block__site-list__item__link"
+                >People nearby</a
+              >
+            </li>
+            <li class="header__main-block__site-list__item">
+              <a href="#" class="header__main-block__site-list__item__link"
+                >Search</a
+              >
+            </li>
+            <li class="header__main-block__site-list__item premium">
+              <a href="#" class="header__main-block__site-list__item__link"
+                >Premium</a
+              >
+            </li>
+          </ul>
+        </div>
         <div class="header__mobile-block">
           <div class="header__mobile-block__menu"></div>
           <div class="header__mobile-block__logo-wrapper">
@@ -28,46 +53,359 @@
     </header>
     <main class="main">
       <div class="container">
-        <div class="main__page-title">
-          <h1 class="page-title">Закончились кредиты?</h1>
-        </div>
-        <div class="main__catalog catalog slider">
-          <div class="slider__wrapper">
-            <div class="catalog__item slider__slide">
-              <span class="catalog__item__special-offer">One time offer!</span>
-              50 <span class="catalog__item__credits">CR</span>
-              <span class="catalog__item__value">/ $5</span>
+        <aside class="main__sidebar sidebar">
+          <div class="sidebar__user">
+            <div class="sidebar__user__avatar">
+              <img
+                class="sidebar__user__avatar__image"
+                src="../img/avatar.jpg"
+                width="49"
+                height="49"
+              />
             </div>
-            <div class="catalog__item slider__slide">
-              <span class="catalog__item__special-offer">One time offer!</span>
-              150 <span class="catalog__item__credits">CR</span>
-              <span class="catalog__item__value">/ $5</span>
-            </div>
-            <div class="catalog__item slider__slide">
-              <span class="catalog__item__special-offer">One time offer!</span>
-              300 <span class="catalog__item__credits">CR</span>
-              <span class="catalog__item__value">/ $5</span>
-            </div>
-            <div class="catalog__item slider__slide">
-              <span class="catalog__item__special-offer">One time offer!</span>
-              500 <span class="catalog__item__credits">CR</span>
-              <span class="catalog__item__value">/ $5</span>
-            </div>
-            <div class="catalog__item slider__slide">
-              <span class="catalog__item__special-offer">One time offer!</span>
-              1000 <span class="catalog__item__credits">CR</span>
-              <span class="catalog__item__value">/ $5</span>
-            </div>
-            <div class="catalog__item slider__slide">
-              <span class="catalog__item__special-offer">One time offer!</span>
-              1000 <span class="catalog__item__credits">CR</span>
-              <span class="catalog__item__value">/ $5</span>
+            <div class="sidebar__user__info">
+              <span class="sidebar__user__info__username">Test2412</span>
+              <button class="sidebar__user__info__button">Get premium</button>
             </div>
           </div>
-          <div class="slider__pagination"></div>
+          <nav class="sidebar__menu">
+            <ul class="sidebar__menu__list">
+              <li class="sidebar__menu__list__item">
+                <svg
+                  class="sidebar__menu__list__item__icon"
+                  width="23"
+                  height="22"
+                  viewBox="0 0 23 22"
+                >
+                  <use href="sprite.svg#user"></use>
+                </svg>
+                <a href="#" class="sidebar__menu__list__item__link">Profile</a>
+              </li>
+              <li class="sidebar__menu__list__item">
+                <svg
+                  class="sidebar__menu__list__item__icon"
+                  width="23"
+                  height="18"
+                  viewBox="0 0 23 18"
+                >
+                  <use href="sprite.svg#camera"></use>
+                </svg>
+                <a href="#" class="sidebar__menu__list__item__link"
+                  >My photos</a
+                >
+              </li>
+              <li class="sidebar__menu__list__item">
+                <svg
+                  class="sidebar__menu__list__item__icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                >
+                  <use href="sprite.svg#comment"></use>
+                </svg>
+                <a href="#" class="sidebar__menu__list__item__link">Messages</a>
+              </li>
+              <li class="sidebar__menu__list__item">
+                <svg
+                  class="sidebar__menu__list__item__icon"
+                  width="16"
+                  height="14"
+                  viewBox="0 0 16 14"
+                >
+                  <use href="sprite.svg#heart"></use>
+                </svg>
+                <a href="#" class="sidebar__menu__list__item__link"
+                  >Favorites</a
+                >
+              </li>
+              <li class="sidebar__menu__list__item">
+                <svg
+                  class="sidebar__menu__list__item__icon"
+                  width="16"
+                  height="12"
+                  viewBox="0 0 16 12"
+                >
+                  <use href="sprite.svg#eye"></use>
+                </svg>
+                <a href="#" class="sidebar__menu__list__item__link">Guests</a>
+              </li>
+              <li class="sidebar__menu__list__item">
+                <svg
+                  class="sidebar__menu__list__item__icon"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                >
+                  <use href="sprite.svg#steam"></use>
+                </svg>
+                <a href="#" class="sidebar__menu__list__item__link">Settings</a>
+              </li>
+              <li class="sidebar__menu__list__item">
+                <svg
+                  class="sidebar__menu__list__item__icon"
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                >
+                  <use href="sprite.svg#log"></use>
+                </svg>
+                <a href="#" class="sidebar__menu__list__item__link">Log out</a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <div class="main__wrapper">
+          <div class="main__page-title">
+            <h1 class="page-title">Закончились кредиты?</h1>
+          </div>
+          <div class="main__catalog catalog">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="catalog__item special-offer swiper-slide">
+                  <div class="catalog__item-inner">
+                    <div class="catalog__item-inner__content">
+                      <span class="special-offer__card">One time offer!</span>
+                      50
+                      <span class="catalog__item-inner__content__credits"
+                        >CR</span
+                      >
+                      <span class="catalog__item-inner__content__value"
+                        >/ $5</span
+                      >
+                    </div>
+                    <button class="catalog__item__button">Buy now</button>
+                  </div>
+                </div>
+                <div class="catalog__item swiper-slide">
+                  <div class="catalog__item-inner">
+                    <div class="catalog__item-inner__content">
+                      150
+                      <span class="catalog__item-inner__content__credits"
+                        >CR</span
+                      >
+                      <span class="catalog__item-inner__content__value"
+                        >/ $30</span
+                      >
+                    </div>
+                    <button class="catalog__item__button">Buy now</button>
+                  </div>
+                </div>
+                <div class="catalog__item swiper-slide">
+                  <div class="catalog__item-inner">
+                    <div class="catalog__item-inner__content">
+                      300
+                      <span class="catalog__item-inner__content__credits"
+                        >CR</span
+                      >
+                      <span class="catalog__item-inner__content__value"
+                        >/ $60</span
+                      >
+                    </div>
+                    <button class="catalog__item__button">Buy now</button>
+                  </div>
+                </div>
+                <div class="catalog__item swiper-slide">
+                  <div class="catalog__item-inner">
+                    <div class="catalog__item-inner__content">
+                      500
+                      <span class="catalog__item-inner__content__credits"
+                        >CR</span
+                      >
+                      <span class="catalog__item-inner__content__value"
+                        >/ $100</span
+                      >
+                    </div>
+                    <button class="catalog__item__button">Buy now</button>
+                  </div>
+                </div>
+                <div class="catalog__item swiper-slide">
+                  <div class="catalog__item-inner">
+                    <div class="catalog__item-inner__content">
+                      1000
+                      <span class="catalog__item-inner__content__credits"
+                        >CR</span
+                      >
+                      <span class="catalog__item-inner__content__value"
+                        >/ $200</span
+                      >
+                    </div>
+                    <button class="catalog__item__button">Buy now</button>
+                  </div>
+                </div>
+                <div class="catalog__item swiper-slide">
+                  <div class="catalog__item-inner">
+                    <div class="catalog__item-inner__content">
+                      1000
+                      <span class="catalog__item-inner__content__credits"
+                        >CR</span
+                      >
+                      <span class="catalog__item-inner__content__value"
+                        >/ $200</span
+                      >
+                    </div>
+                    <button class="catalog__item__button">Buy now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <button class="catalog__button-mobile">Try now</button>
+            <div class="catalog__privacy">
+              <div class="catalog__privacy--checkbox">
+                <input
+                  class="catalog__privacy--checkbox__input"
+                  type="checkbox"
+                  id="checkbox"
+                />
+                <label class="catalog__privacy--checkbox__label" for="checkbox">
+                </label>
+              </div>
+              <span class="catalog__privacy--content">
+                By clicking Checkbox you agree and accept our
+                <a href="#" target="_blank">Privacy Policy</a>, and
+                <a href="#" target="_blank">Terms of use</a>
+              </span>
+            </div>
+          </div>
+          <div class="main__possibilities possibilities">
+            <div class="possibilities__wrapper">
+              <div class="possibilities__logo">
+                <img
+                  class="possibilities__logo--image"
+                  src="../img/logo-big.png"
+                  width="81"
+                  height="67"
+                  alt="Лого"
+                />
+              </div>
+              <div class="possibilities__list">
+                <div class="possibilities__list__item">
+                  <div class="possibilities__list__item__icon-wrapper">
+                    <svg
+                      class="possibilities__list__item__icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <use href="sprite.svg#comment"></use>
+                    </svg>
+                  </div>
+                  <span class="possibilities__list__item__text"
+                    >Отправлять сообщения</span
+                  >
+                </div>
+                <div class="possibilities__list__item">
+                  <div class="possibilities__list__item__icon-wrapper">
+                    <svg
+                      class="possibilities__list__item__icon"
+                      width="16"
+                      height="12"
+                      viewBox="0 0 16 12"
+                    >
+                      <use href="sprite.svg#eye"></use>
+                    </svg>
+                  </div>
+                  <span class="possibilities__list__item__text"
+                    >Просматривать скрытые фото</span
+                  >
+                </div>
+                <div class="possibilities__list__item">
+                  <div class="possibilities__list__item__icon-wrapper">
+                    <svg
+                      class="possibilities__list__item__icon"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                    >
+                      <use href="sprite.svg#gift"></use>
+                    </svg>
+                  </div>
+                  <span class="possibilities__list__item__text"
+                    >Оплачивать подарки</span
+                  >
+                </div>
+                <div class="possibilities__list__item">
+                  <div class="possibilities__list__item__icon-wrapper">
+                    <svg
+                      class="possibilities__list__item__icon"
+                      width="16"
+                      height="14"
+                      viewBox="0 0 16 14"
+                    >
+                      <use href="sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <span class="possibilities__list__item__text"
+                    >Пользоваться другими премиум функциями</span
+                  >
+                </div>
+                <div class="possibilities__list__item">
+                  <div class="possibilities__list__item__icon-wrapper">
+                    <svg
+                      class="possibilities__list__item__icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <use href="sprite.svg#comment"></use>
+                    </svg>
+                  </div>
+                  <span class="possibilities__list__item__text"
+                    >Просматривать скрытые фото</span
+                  >
+                </div>
+                <div class="possibilities__list__item">
+                  <div class="possibilities__list__item__icon-wrapper">
+                    <svg
+                      class="possibilities__list__item__icon"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
+                    >
+                      <use href="sprite.svg#steam"></use>
+                    </svg>
+                  </div>
+                  <span class="possibilities__list__item__text"
+                    >Просматривать скрытые фото</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
-    <script type="module" src="./js/scripts.min.js"></script>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper-container", {
+        direction: "horizontal",
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 40,
+        enabled: true,
+        // slidesOffsetBefore: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          600: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 10,
+            enabled: true,
+          },
+          768: {
+            slidesPerView: "auto",
+            slidesPerGroup: "auto",
+            spaceBetween: 0,
+            enabled: false,
+          },
+        },
+      });
+    </script>
   </body>
 </html>

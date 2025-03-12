@@ -1,0 +1,111 @@
+.sidebar {
+  display: none;
+
+  margin-top: 30px;
+  padding: 18px;
+
+  background: rgba(149, 100, 170, 0.1);
+  border: 2px solid;
+  border-color: rgba(149, 100, 170, 0.2);
+  border-radius: 10px;
+
+  @include media("tablet") {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    flex-basis: 270px;
+    flex-shrink: 0;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 2px solid #e2d4e8;
+
+    &__avatar {
+      border-radius: 50%;
+      overflow: hidden;
+
+      &__image {
+        width: 49px;
+        height: 49px;
+
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      &__username {
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+      }
+
+      &__button {
+        width: 86px;
+        min-height: 21px;
+
+        font-size: 10px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #fff;
+
+        border-radius: 5px;
+        background: #684677;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  &__menu {
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        &:hover {
+          & > a {
+            text-decoration: underline;
+            color: #684677;
+          }
+        }
+
+        &__icon {
+          width: 22px;
+          height: 22px;
+        }
+
+        &__link {
+          flex-grow: 1;
+
+          display: block;
+          height: 100%;
+
+          font-size: 16px;
+          font-weight: 400;
+          color: #000;
+        }
+      }
+    }
+  }
+}
