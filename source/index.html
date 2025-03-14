@@ -39,29 +39,66 @@
           <div class="header__mobile-block__menu"></div>
           <div class="header__mobile-block__logo-wrapper">
             <a class="header__mobile-block__logo" href="index.html">
-              <img
-                class="header__mobile-block__logo-icon"
-                src="img/logo-mobile-header.png"
-                width="18"
-                height="15"
-                alt="Лого компании"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="img/logo-mobile-header.webp"
+                />
+                <img
+                  class="header__mobile-block__logo-icon"
+                  src="img/logo-mobile-header.png"
+                  width="18"
+                  height="15"
+                  alt="Лого компании"
+                />
+              </picture>
             </a>
           </div>
         </div>
       </div>
     </header>
     <main class="main">
+      <div class="main__scene" id="first-scene">
+        <div data-depth="0.5">
+          <picture>
+            <source type="image/webp" srcset="img/pattern1.webp" />
+            <img
+              class="main__scene__img"
+              src="img/pattern1.png"
+              width="639"
+              height="638"
+              alt="Декоративные шары"
+            />
+          </picture>
+        </div>
+      </div>
+      <div class="main__scene" id="second-scene">
+        <div data-depth="0.5">
+          <picture>
+            <source type="image/webp" srcset="img/pattern2.webp" />
+            <img
+              class="main__scene__img"
+              src="img/pattern2.png"
+              width="607"
+              height="803"
+              alt="Декоративные шары"
+            />
+          </picture>
+        </div>
+      </div>
       <div class="container">
         <aside class="main__sidebar sidebar">
           <div class="sidebar__user">
             <div class="sidebar__user__avatar">
-              <img
-                class="sidebar__user__avatar__image"
-                src="../img/avatar.jpg"
-                width="49"
-                height="49"
-              />
+              <picture>
+                <source type="image/webp" srcset="img/avatar.webp" />
+                <img
+                  class="sidebar__user__avatar__image"
+                  src="img/avatar.jpg"
+                  width="49"
+                  height="49"
+                />
+              </picture>
             </div>
             <div class="sidebar__user__info">
               <span class="sidebar__user__info__username">Test2412</span>
@@ -158,13 +195,23 @@
           <div class="main__page-title">
             <h1 class="page-title">Закончились кредиты?</h1>
           </div>
+          <div class="main__discount discount">
+            <span class="discount__value">Скидка 40%</span>
+            <span class="discount__offer-available"
+              >Предложение действует в течение:</span
+            >
+            <div class="discount__timer">
+              <span class="discount__timer__hours" id="hours">00</span> :
+              <span class="discount__timer__minutes" id="minutes">10</span> :
+              <span class="discount__timer__seconds" id="seconds">00</span>
+            </div>
+          </div>
           <div class="main__catalog catalog">
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div class="catalog__item special-offer swiper-slide">
                   <div class="catalog__item-inner">
                     <div class="catalog__item-inner__content">
-                      <span class="special-offer__card">One time offer!</span>
                       50
                       <span class="catalog__item-inner__content__credits"
                         >CR</span
@@ -174,6 +221,7 @@
                       >
                     </div>
                     <button class="catalog__item__button">Buy now</button>
+                    <span class="special-offer__card">One time offer!</span>
                   </div>
                 </div>
                 <div class="catalog__item swiper-slide">
@@ -270,13 +318,16 @@
           <div class="main__possibilities possibilities">
             <div class="possibilities__wrapper">
               <div class="possibilities__logo">
-                <img
-                  class="possibilities__logo--image"
-                  src="../img/logo-big.png"
-                  width="81"
-                  height="67"
-                  alt="Лого"
-                />
+                <picture>
+                  <source type="image/webp" srcset="img/logo-big.webp" />
+                  <img
+                    class="possibilities__logo--image"
+                    src="img/logo-big.png"
+                    width="81"
+                    height="67"
+                    alt="Лого"
+                  />
+                </picture>
               </div>
               <div class="possibilities__list">
                 <div class="possibilities__list__item">
@@ -379,33 +430,51 @@
       <div class="container"></div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script>
-      const swiper = new Swiper(".swiper-container", {
-        direction: "horizontal",
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 40,
-        enabled: true,
-        // slidesOffsetBefore: 20,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          600: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-            spaceBetween: 10,
-            enabled: true,
+      const breakpoint = window.matchMedia("(min-width:768px)");
+      let swiper;
+
+      const breakpointChecker = function () {
+        if (breakpoint.matches === true) {
+          if (swiper !== undefined) swiper.destroy(true, true);
+          return;
+        } else if (breakpoint.matches === false) {
+          return enableSwiper();
+        }
+      };
+
+      const enableSwiper = function () {
+        swiper = new Swiper(".swiper-container", {
+          direction: "horizontal",
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 30,
+          enabled: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
           },
-          768: {
-            slidesPerView: "auto",
-            slidesPerGroup: "auto",
-            spaceBetween: 0,
-            enabled: false,
+          breakpoints: {
+            600: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+              spaceBetween: 10,
+              enabled: true,
+            },
           },
-        },
+        });
+      };
+
+      breakpoint.addListener(breakpointChecker);
+      breakpointChecker();
+    </script>
+    <script>
+      const scenes = document.querySelectorAll(".main__scene");
+      scenes.forEach((scene) => {
+        const parallax = new Parallax(scene);
       });
     </script>
+    <script src="./js/scripts.min.js"></script>
   </body>
 </html>

@@ -1,0 +1,68 @@
+.discount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+  min-height: 82px;
+  padding: 13px 10px;
+
+  background: #c15ca1;
+  border-radius: 10px;
+
+  @include media("desktop") {
+    gap: 20px;
+  }
+
+  &__value {
+    width: 31%;
+
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    -webkit-text-fill-color: #ffcf2d;
+    -webkit-text-stroke: 1px #fff;
+
+    @include media("desktop") {
+      font-size: 40px;
+    }
+  }
+
+  &__offer-available {
+    width: 26%;
+
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+
+    @include media("tablet") {
+      width: 28%;
+    }
+
+    @include media("desktop") {
+      width: 34%;
+    }
+  }
+
+  &__timer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 56px;
+    padding: 5px 10px;
+
+    font-size: 40px;
+    font-weight: 400;
+    color: #000;
+
+    background: #fff;
+    border-radius: 5px;
+
+    @include media("desktop") {
+      padding: 5px 20px;
+    }
+  }
+}

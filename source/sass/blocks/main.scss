@@ -1,11 +1,37 @@
 .main {
+  position: relative;
+  z-index: 1;
   flex-grow: 1;
 
   display: flex;
 
   background: #fff;
 
+  &__scene {
+    position: absolute;
+    display: none;
+
+    z-index: 0;
+
+    @include media("tablet") {
+      display: block;
+    }
+
+    &#first-scene {
+      top: 144px;
+      right: 65%;
+    }
+
+    &#second-scene {
+      top: 32px;
+      left: 67%;
+    }
+  }
+
   & > div.container {
+    position: relative;
+    z-index: 1;
+
     @include media("tablet") {
       display: flex;
       justify-content: space-between;
@@ -58,6 +84,16 @@
       @include media("desktop") {
         font-size: 40px;
       }
+    }
+  }
+
+  &__discount.discount {
+    display: none;
+
+    margin-bottom: 26px;
+
+    @include media("mobile-lg") {
+      display: flex;
     }
   }
 }

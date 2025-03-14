@@ -98,6 +98,12 @@ gulp.task("scripts", function () {
   return gulp
     .src(["source/js/**/*.js"])
     .pipe(concat("scripts.min.js"))
+    .pipe(
+      babel({
+        presets: ["@babel/preset-env"],
+      })
+    )
+    .pipe(uglify())
     .pipe(gulp.dest("build/js/"))
     .pipe(server.stream());
 });

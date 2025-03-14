@@ -44,6 +44,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^10.4.19"
+    "autoprefixer": "^10.4.19",
+    "parallax-js": "^3.1.0"
   }
 }

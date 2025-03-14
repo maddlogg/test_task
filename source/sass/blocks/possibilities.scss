@@ -1,9 +1,44 @@
 .possibilities {
+  @include media("tablet") {
+    display: flex;
+    justify-content: center;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 13px;
+
+    @include media("tablet") {
+      display: grid;
+      grid-template-columns: 78px 83px 108px 94px;
+      grid-template-rows: 1fr auto 1fr;
+      grid-template-areas:
+        ". icon1 icon2 ."
+        "icon3 logo logo icon4"
+        ". icon5 icon6 .";
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media("tablet") {
+      grid-area: logo;
+      align-self: center;
+    }
+
+    img {
+      @include media("tablet") {
+        width: 129px;
+        height: 107px;
+      }
+    }
   }
 
   &__list {
@@ -13,13 +48,70 @@
 
     width: 100%;
 
+    @include media("mobile-lg") {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+
+    @include media("tablet") {
+      display: contents;
+    }
+
     &__item {
       display: flex;
       align-items: center;
       gap: 10px;
 
+      @include media("tablet") {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      &:nth-child(1) {
+        @include media("tablet") {
+          grid-area: icon1;
+        }
+      }
+
+      &:nth-child(2) {
+        @include media("tablet") {
+          grid-area: icon4;
+
+          margin-left: -40px;
+        }
+      }
+
+      &:nth-child(3) {
+        @include media("tablet") {
+          grid-area: icon3;
+
+          margin-right: -40px;
+        }
+      }
+
+      &:nth-child(4) {
+        @include media("tablet") {
+          grid-area: icon2;
+        }
+      }
+
+      &:nth-child(5) {
+        @include media("tablet") {
+          grid-area: icon5;
+        }
+      }
+
+      &:nth-child(6) {
+        @include media("tablet") {
+          grid-area: icon6;
+        }
+      }
+
       &:nth-child(n + 5) {
         display: none;
+
+        @include media("tablet") {
+          display: flex;
+        }
       }
 
       &__icon-wrapper {
@@ -33,11 +125,33 @@
 
         border-radius: 50%;
         background: #f5f0f7;
+
+        @include media("tablet") {
+          width: 50px;
+          height: 50px;
+        }
+
+        &:hover {
+          & > svg {
+            & > use {
+              fill: #ffcf2d;
+            }
+          }
+        }
       }
 
       &__icon {
         width: 16px;
         height: 16px;
+
+        @include media("tablet") {
+          width: 24px;
+          height: 24px;
+        }
+
+        & > use {
+          fill: #9564aa;
+        }
       }
 
       &__text {
@@ -46,6 +160,12 @@
         font-size: 12px;
         font-weight: 700;
         color: #9564aa;
+
+        @include media("tablet") {
+          padding: 0;
+
+          text-align: center;
+        }
       }
     }
   }

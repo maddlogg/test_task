@@ -61,6 +61,12 @@ body {
   }
 }
 
+polyline,
+path {
+  fill: inherit;
+  stroke: inherit;
+}
+
 .container {
   min-width: 320px;
 
@@ -90,4 +96,5 @@ body {
 @import "blocks/catalog.scss";
 @import "blocks/possibilities.scss";
 @import "blocks/sidebar.scss";
+@import "blocks/discount.scss";
 @import "blocks/footer.scss";
