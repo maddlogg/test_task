@@ -270,6 +270,8 @@
         @include media("mobile-lg") {
           flex-basis: 150px;
           flex-grow: 1;
+
+          height: auto;
         }
       }
     }
