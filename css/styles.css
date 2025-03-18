@@ -343,6 +343,7 @@ path {
 .catalog {
   position: relative;
   width: 100%;
+  max-width: 100%;
   margin-bottom: 32px;
 }
 .catalog__item {
@@ -599,17 +600,23 @@ path {
 .catalog__item.swiper-slide-active {
   visibility: visible;
 }
-.catalog__item:not(.catalog__item.swiper-slide-active):not(.swiper-slide-next) {
+@media screen and (min-width: 600px) {
+  .catalog__item.swiper-slide.swiper-slide-next {
+    visibility: visible;
+  }
+}
+.catalog__item:not(.swiper-slide-active) {
   visibility: hidden;
 }
 @media screen and (min-width: 768px) {
-  .catalog__item:not(.catalog__item.swiper-slide-active):not(.swiper-slide-next) {
+  .catalog__item:not(.swiper-slide-active) {
     visibility: visible;
   }
 }
 .catalog > div.swiper-container {
   position: relative;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
+  overflow-x: hidden;
 }
 @media screen and (min-width: 992px) {
   .catalog > div.swiper-container {
@@ -640,7 +647,7 @@ path {
   }
 }
 .catalog > div.swiper-container > div.swiper-pagination {
-  bottom: -19px;
+  bottom: 32px;
 }
 .catalog > div.swiper-container > div.swiper-pagination > span.swiper-pagination-bullet-active, .catalog > div.swiper-container > div.swiper-pagination > span.swiper-pagination-bullet {
   background-color: #ffc500;
