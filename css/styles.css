@@ -243,6 +243,7 @@ path {
   display: -ms-flexbox;
   display: flex;
   background: #fff;
+  overflow-x: hidden;
 }
 .main__scene {
   position: absolute;
