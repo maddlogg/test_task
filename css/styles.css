@@ -617,7 +617,7 @@ path {
 .catalog > div.swiper-container {
   position: relative;
   padding-bottom: 50px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 @media screen and (min-width: 992px) {
   .catalog > div.swiper-container {
@@ -626,7 +626,7 @@ path {
 }
 @media screen and (min-width: 768px) {
   .catalog > div.swiper-container {
-    overflow-x: visible;
+    overflow: visible;
   }
 }
 @media screen and (min-width: 768px) {
