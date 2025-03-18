@@ -2,6 +2,7 @@
   position: relative;
 
   width: 100%;
+  max-width: 100%;
   margin-bottom: 32px;
 
   &__item {
@@ -241,7 +242,13 @@
     visibility: visible;
   }
 
-  &__item:not(.catalog__item.swiper-slide-active):not(.swiper-slide-next) {
+  &__item.swiper-slide.swiper-slide-next {
+    @include media("mobile-sm-max") {
+      visibility: visible;
+    }
+  }
+
+  &__item:not(.swiper-slide-active) {
     visibility: hidden;
 
     @include media("mobile-lg") {
@@ -252,7 +259,9 @@
   & > div.swiper-container {
     position: relative;
 
-    margin-bottom: 50px;
+    padding-bottom: 50px;
+
+    overflow-x: hidden;
 
     @include media("tablet") {
       margin-bottom: 0;
@@ -277,7 +286,7 @@
     }
 
     & > div.swiper-pagination {
-      bottom: -19px;
+      bottom: 32px;
 
       & > span.swiper-pagination-bullet-active,
       & > span.swiper-pagination-bullet {
