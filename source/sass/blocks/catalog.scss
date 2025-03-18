@@ -267,6 +267,10 @@
       margin-bottom: 0;
     }
 
+    @include media("mobile-lg") {
+      overflow-x: visible;
+    }
+
     & > .swiper-wrapper {
       @include media("mobile-lg") {
         flex-wrap: wrap;
