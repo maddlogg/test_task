@@ -625,6 +625,11 @@ path {
   }
 }
 @media screen and (min-width: 768px) {
+  .catalog > div.swiper-container {
+    overflow-x: visible;
+  }
+}
+@media screen and (min-width: 768px) {
   .catalog > div.swiper-container > .swiper-wrapper {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
