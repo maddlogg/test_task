@@ -261,14 +261,14 @@
 
     padding-bottom: 50px;
 
-    overflow-x: hidden;
+    overflow: hidden;
 
     @include media("tablet") {
       margin-bottom: 0;
     }
 
     @include media("mobile-lg") {
-      overflow-x: visible;
+      overflow: visible;
     }
 
     & > .swiper-wrapper {
